@@ -7,8 +7,7 @@ from PIL import Image
 import gdown  
 
 MODEL_PATH = "FER_MobileNetV2_best.h5"
-MODEL_ID = "14s_pVDNsO5laG0UI8c7SQK-sfGT97dmb"
-GDRIVE_URL = f"https://drive.google.com/uc?id={MODEL_ID}"
+GDRIVE_URL = f"https://drive.google.com/file/d/14s_pVDNsO5laG0UI8c7SQK-sfGT97dmb/view?usp=sharing"
 
 @st.cache_resource(show_spinner="Downloading model from Google Drive...")
 def load_model_from_drive():
