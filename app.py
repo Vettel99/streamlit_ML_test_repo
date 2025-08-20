@@ -7,7 +7,7 @@ from PIL import Image
 import requests
 
 MODEL_PATH = "FER_MobileNetV2_best.h5"
-HF_URL = "https://huggingface.co/Vettel99/FER_MobileNetV2_best/blob/main/FER_MobileNetV2_best.h5"
+HF_URL = "https://huggingface.co/Vettel99/FER_MobileNetV2_best/resolve/main/FER_MobileNetV2_best.h5"
 
 @st.cache_resource(show_spinner="Downloading model from Hugging Face...")
 def load_model_from_hf():
