@@ -4,20 +4,21 @@ import numpy as np
 import tensorflow as tf
 from keras.models import load_model
 from PIL import Image
-import gdown  
+import requests
 
 MODEL_PATH = "FER_MobileNetV2_best.h5"
-GDRIVE_URL = f"https://drive.google.com/file/d/14s_pVDNsO5laG0UI8c7SQK-sfGT97dmb/view?usp=sharing"
+HF_URL = "https://huggingface.co/Vettel99/FER_MobileNetV2_best/blob/main/FER_MobileNetV2_best.h5"
 
-@st.cache_resource(show_spinner="Downloading model from Google Drive...")
-def load_model_from_drive():
+@st.cache_resource(show_spinner="Downloading model from Hugging Face...")
+def load_model_from_hf():
     if not os.path.exists(MODEL_PATH):
-        gdown.download(GDRIVE_URL, MODEL_PATH, quiet=False)
+        with open(MODEL_PATH, "wb") as f:
+            response = requests.get(HF_URL)
+            f.write(response.content)
     return load_model(MODEL_PATH)
 
-model = load_model_from_drive()
+model = load_model_from_hf()
 
-# Your app logic follows
 
 
 # Emotion labels (example — replace with your actual label list)
