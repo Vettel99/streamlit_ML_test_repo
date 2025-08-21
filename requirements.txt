@@ -1,6 +1,17 @@
-streamlit
-tensorflow
-pillow
-numpy
-requests
-opencv-python-headless
+# Streamlit app
+streamlit>=1.29
+
+# Use TensorFlow 2.x (match training-time family); DO NOT install standalone 'keras'
+tensorflow==2.12.0
+
+# Versions known to play nicely with TF 2.12 on Linux/Spaces
+numpy==1.23.5
+h5py==3.8.0
+pillow==9.4.0
+protobuf==3.20.3
+
+# Networking
+requests>=2.31.0
+
+# Optional if you later add OpenCV-based preprocessing
+# opencv-python-headless==4.7.0.72
